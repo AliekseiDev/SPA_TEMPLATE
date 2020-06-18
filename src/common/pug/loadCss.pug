@@ -1,0 +1,6 @@
+if !APP
+    - throw new Error('variable APP is not defined')
+if !PAGE
+    - throw new Error('variable PAGE is not defined')
+each jsUrl in entrypoints[`${app}/${page}`].js
+    script(src=jsUrl)

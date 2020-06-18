@@ -1,0 +1,7 @@
+if !APP
+    - throw new Error('variable APP is not defined')
+if !PAGE
+    - throw new Error('variable PAGE is not defined')
+
+each cssUrl in entrypoints[`${app}/${page}`].css
+    link(rel="stylesheet", href=cssUrl)
